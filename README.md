@@ -113,5 +113,9 @@ curl -XGET -G 'localhost:8080/nClosestGenres' \
 
 # example response
 ["music"]
-
 ```
+
+# Notes
+- I'm pretty confident in each call except the last (`nClosestGenres`). I tested on toy data but I don't think the document centroid approach is ideal as I test on larger document collections (the results aren't always as expected). If I had more time, I'd likely read more about text classification approaches and try something new. Or maybe delegate the work to some other library (e.g. Lucene)
+
+
