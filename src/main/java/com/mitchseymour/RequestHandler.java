@@ -19,7 +19,9 @@ public class RequestHandler {
 
   /**
    * The store to be used for saving documents. In this example, we use a simple in-memory store. We
-   * would want to swap this out with a persistent store before going to production.
+   * would want to swap this out with a persistent store before going to production. The store can
+   * be interacted with directly, but we also configure our document classifiers with this store
+   * since they require some mechanism of saving previously seen documents for a given genre.
    */
   private Store store = new InMemoryStore();
 
@@ -65,9 +67,8 @@ public class RequestHandler {
   public void addDocumentToGenre(String genre, String docId, String documentText) {
     Document doc = new Document(docId, documentText);
 
-    // add to the document store
     try {
-      // update the classifier
+      // add the document to the classifier and store
       genreClassifiers.putIfAbsent(
           genre,
           // initialize a new classifier if this genre hasn't been seen before
@@ -87,8 +88,8 @@ public class RequestHandler {
    * @param docId document to remove
    */
   public void removeDocumentFromGenre(String genre, String docId) {
-    // remove from the document store
     try {
+      // remove the document from the classifier and store
       DocumentClassifier classifier = genreClassifiers.get(genre);
       if (classifier == null) {
         log.warn("Genre does not exist: {}", genre);

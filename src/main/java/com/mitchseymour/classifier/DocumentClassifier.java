@@ -10,8 +10,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * A simple classifier that compares target documents to a document centroid, which is computed
- * using the average term frequencies across all documents in a given genre
+ * A simple store-backed classifier that compares target documents to a document centroid, which is
+ * computed using the average term frequencies across all documents in a given genre
  */
 public class DocumentClassifier {
   private final String genre;
@@ -41,7 +41,8 @@ public class DocumentClassifier {
   }
 
   /**
-   * Add a document to the classifier
+   * Add a document to the classifier. We will also recompute the document centroid each time a
+   * record is added.
    *
    * @param document The document to add
    */
@@ -68,7 +69,8 @@ public class DocumentClassifier {
   }
 
   /**
-   * Remove a document from the classifier
+   * Remove a document from the classifier. We will also recompute the document centroid each time a
+   * record is removed.
    *
    * @param docId the id of the document to remove
    */
