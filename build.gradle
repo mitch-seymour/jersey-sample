@@ -57,10 +57,7 @@ test {
 
 /**
  * The below task will download the JAR needed for running the Prometheus JMX
- * exporter as a Java agent. If you prefer to run the exporter as a standalone
- * HTTP server instead (which allows us to add custom metrics to our Kafka
- * Streams app, and is what we've implemented in App.java), feel free to delete
- * this Gradle task.
+ * exporter as a Java agent.
  */
 task downloadPrometheusExporter(type: Download) {
     src "https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/${prometheusJmxExporterVersion}/jmx_prometheus_javaagent-${prometheusJmxExporterVersion}.jar"
