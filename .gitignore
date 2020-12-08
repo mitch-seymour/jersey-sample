@@ -1,0 +1,17 @@
+.classpath
+.idea
+*.iml
+.project
+/target
+/.gradle/
+/.gradle.properties
+/.settings/
+/build/
+/gradle.properties
+/bin/
+/tmp/
+/workbench.xmi
+/docker/*.jar
+/files/jmx_prometheus_javaagent.jar
+.DS_Store
+.vscode
