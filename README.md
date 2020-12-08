@@ -112,6 +112,17 @@ curl -XGET -G 'localhost:8080/nClosestGenres' \
     --data-urlencode "documentText=listening to electronic helps me focus"
 
 # example response
+["music","film"]
+```
+
+You can also adjust the max genre count:
+```sh
+# example request
+curl -XGET -G 'localhost:8080/nClosestGenres' \
+    --data-urlencode "count=1" \
+    --data-urlencode "documentText=listening to electronic helps me focus"
+
+# example response
 ["music"]
 ```
 
