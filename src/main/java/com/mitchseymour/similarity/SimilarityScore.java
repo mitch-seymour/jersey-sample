@@ -1,6 +1,5 @@
-package com.mitchseymour;
+package com.mitchseymour.similarity;
 
-// not thread safe
 public class SimilarityScore implements Comparable<SimilarityScore> {
   private final String genre;
   private final Double score;

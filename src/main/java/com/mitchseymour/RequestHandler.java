@@ -2,6 +2,7 @@ package com.mitchseymour;
 
 import com.mitchseymour.classifier.DocumentClassifier;
 import com.mitchseymour.similarity.CosineSimilarity;
+import com.mitchseymour.similarity.SimilarityScore;
 import com.mitchseymour.store.InMemoryStore;
 import com.mitchseymour.store.Store;
 import com.mitchseymour.store.StoreException;

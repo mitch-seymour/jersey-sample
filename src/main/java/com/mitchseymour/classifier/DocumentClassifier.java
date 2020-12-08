@@ -1,9 +1,9 @@
 package com.mitchseymour.classifier;
 
 import com.mitchseymour.Document;
-import com.mitchseymour.SimilarityScore;
 import com.mitchseymour.similarity.CosineSimilarity;
 import com.mitchseymour.similarity.Similarity;
+import com.mitchseymour.similarity.SimilarityScore;
 import com.mitchseymour.store.Store;
 import java.util.HashMap;
 import java.util.Map;

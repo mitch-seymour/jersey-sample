@@ -2,6 +2,7 @@ package com.mitchseymour;
 
 import com.mitchseymour.similarity.CosineSimilarity;
 import com.mitchseymour.similarity.Similarity;
+import com.mitchseymour.similarity.SimilarityScore;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
