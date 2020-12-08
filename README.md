@@ -1,5 +1,5 @@
 # jersey-sample
-An example Jersey application that classifies text. The classifier implementation computes a document centroid by averaging the term frequencies across all documents in a specific genre. It could probably be improved by removing stop words, [stemming the words][stem], and possibly weighting the terms (e.g. using [TF-IDF][tf-idf]). I could have used Lucene for some of this too but wanted to give it a shot myself.
+An example Jersey application that computes term frequencies and classifies text. The classifier implementation computes a document centroid by averaging the term frequencies across all documents in a specific genre. It could probably be improved by removing stop words, [stemming the words][stem], and possibly weighting the terms (e.g. using [TF-IDF][tf-idf]). I could have used Lucene for some of this too but wanted to give it a shot myself.
 
 [tf-idf]: https://monkeylearn.com/blog/what-is-tf-idf/#:~:text=TF%2DIDF%20is%20a%20statistical,across%20a%20set%20of%20documents.
 [stem]: https://nlp.stanford.edu/IR-book/html/htmledition/stemming-and-lemmatization-1.html
@@ -113,5 +113,9 @@ curl -XGET -G 'localhost:8080/nClosestGenres' \
 
 # example response
 ["music"]
-
 ```
+
+# Notes
+- I'm pretty confident in each call except the last (`nClosestGenres`). I tested on toy data but I don't think the document centroid approach is ideal as I test on larger document collections (the results aren't always as expected). If I had more time, I'd likely read more about text classification approaches and try something new. Or maybe delegate the work to some other library (e.g. Lucene)
+
+
