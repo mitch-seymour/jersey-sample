@@ -140,7 +140,7 @@ public class RequestHandler {
     // return the n closest genres
     return scores
         .stream()
-        .filter(score -> score.getScore() > 0.0)
+        // .filter(score -> score.getScore() > 0.0)
         .map(score -> score.getGenre())
         .limit(n)
         .collect(Collectors.toList());
